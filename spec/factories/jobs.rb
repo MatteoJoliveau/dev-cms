@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # == Schema Information
 #
 # Table name: jobs
@@ -13,6 +14,7 @@
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #  short_description :string           not null
+#  published         :boolean          default(FALSE)
 #
 
 FactoryBot.define do
@@ -23,5 +25,9 @@ FactoryBot.define do
     starting_date { rand(1...5).years.ago }
     ending_date { 1.years.from_now }
     url { Faker::Internet.url }
+
+    trait :published do
+      published { true }
+    end
   end
 end

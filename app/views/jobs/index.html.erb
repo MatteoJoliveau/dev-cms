@@ -1,0 +1,10 @@
+<section class="hero">
+  <div class="hero-body">
+    <h1 class="title"><%= t('label.jobs') %></h1>
+    <h2 class="subtitle"><%= t('jobs.subtitle') %></h2>
+  </div>
+
+</section>
+<div class="section">
+  <%= render 'fragments/job-list', { jobs: @jobs } %>
+</div>

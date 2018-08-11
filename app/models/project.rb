@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: projects
@@ -25,6 +26,10 @@ class Project < ApplicationRecord
   scope :published, -> { where(published: true) }
 
   validates_presence_of :name
+
+  def starred?
+    star
+  end
 
   def published?
     published

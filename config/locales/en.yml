@@ -35,9 +35,13 @@ en:
     description: "Description"
     about: "About Me"
     contacts: "Contacts"
+    jobs: "Career"
+    at: "at"
   home:
     hero:
       subtitle: "Software Developer and Cloud Enthusiast"
       title: "Matteo Joliveau"
   projects:
     subtitle: "My open source effort and personal projects"
+  jobs:
+    subtitle: "Past and present work experience"

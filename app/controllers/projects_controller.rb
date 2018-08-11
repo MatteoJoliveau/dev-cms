@@ -4,7 +4,6 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.find(params[:id])
-    pp @project
+    @project = Project.published.find params[:id]
   end
 end

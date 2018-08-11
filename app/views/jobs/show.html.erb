@@ -1,0 +1,31 @@
+<section class="section">
+  <h1 class="title"><%= @job.position %> <%= t('label.at')%> <%= @job.company_name %></h1>
+  <h1 class="subtitle"><%= @job.short_description %></h1>
+  <hr>
+
+  <div class="box">
+    <article class="media">
+      <div class="media-left">
+
+      </div>
+      <div class="media-content">
+        <figure class="image">
+          <%= image_tag @job.image.variant(ImageVariants::SCALED) %>
+        </figure>
+        <%= render 'fragments/content', { content: @job.description } %>
+        <nav class="level is-mobile">
+          <div class="level-left">
+            <%= link_to @job.url,
+                        class: 'level-item',
+                        'aria-label': 'url',
+                        target: '_blank' do %>
+            <span class="icon is-large">
+              <i class="mdi mdi-open-in-new" aria-hidden="true"></i>
+            </span>
+            <% end %>
+          </div>
+        </nav>
+      </div>
+    </article>
+  </div>
+</section>

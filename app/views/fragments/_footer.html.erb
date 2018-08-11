@@ -1,0 +1,11 @@
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      &copy;<%= config_fetch('footer.copyright-year') %> <strong><%= config_fetch('footer.author') %></strong>
+      This website is open source. The source code is licensed under
+      <%= link_to config_fetch('footer.license.name'), config_fetch('footer.license.url'), target: '_blank' %>
+      and can be found
+      on <%= link_to config_fetch('footer.vcs.name'), config_fetch('footer.vcs.url'), target: '_blank' %>.
+    </p>
+  </div>
+</footer>

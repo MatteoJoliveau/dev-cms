@@ -14,6 +14,7 @@
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #  short_description :string           not null
+#  published         :boolean          default(FALSE)
 #
 
 require 'rails_helper'

@@ -23,5 +23,9 @@ FactoryBot.define do
     url { Faker::Internet.url }
     description { Faker::Lorem.paragraph }
     star { (rand % 2).zero? }
+
+    trait :published do
+      published { true }
+    end
   end
 end

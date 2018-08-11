@@ -10,9 +10,7 @@
         </figure>
       </div>
       <div class="media-content">
-        <div class="content">
-          <%= @project.description %>
-        </div>
+        <%= render 'fragments/content', { content: @project.description } %>
         <nav class="level is-mobile">
           <div class="level-left">
             <!--            <a class="level-item" aria-label="reply">-->

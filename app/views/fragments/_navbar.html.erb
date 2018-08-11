@@ -15,8 +15,9 @@
   <div class="navbar-menu" id="navbar-menu">
     <div class="navbar-end">
       <%= link_to t('label.projects'), projects_path, class: 'navbar-item' %>
-      <%= link_to t('label.about'), about_path, class: 'navbar-item' %>
-      <%= link_to t('label.contacts'), contacts_path, class: 'navbar-item' %>
+      <%= link_to t('label.jobs'), jobs_path, class: 'navbar-item' %>
+      <%= link_to t('label.about'), about_path, class: 'navbar-item' if Copy.about.present? %>
+      <%= link_to t('label.contacts'), contacts_path, class: 'navbar-item' if Copy.contacts.present? %>
     </div>
   </div>
 </nav>

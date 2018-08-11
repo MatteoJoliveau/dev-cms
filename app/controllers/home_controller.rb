@@ -3,6 +3,7 @@
 class HomeController < ApplicationController
   def index
     @projects = Project.published.starred
+    @jobs = Job.published.order_recent
   end
 
   def about

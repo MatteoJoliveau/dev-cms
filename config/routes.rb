@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :projects
     resources :jobs
     resources :copies
+    resources :configs
   end
 
   root 'home#index'
@@ -12,4 +13,5 @@ Rails.application.routes.draw do
   get 'contacts' => 'home#contacts'
 
   resources :projects, only: %i[index show]
+  resources :jobs, only: %i[index show]
 end

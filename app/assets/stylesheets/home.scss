@@ -4,6 +4,6 @@
 
 @import "utils/variables.scss";
 
-.pippo {
-  color: $red;
+.is-gradient {
+  background-image: repeating-linear-gradient(to bottom right, $gradient-base 0%, $gradient-target 100%)
 }

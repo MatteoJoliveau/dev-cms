@@ -1,13 +1,24 @@
-<section class="hero is-medium is-primary">
+<section class="hero is-medium is-gradient">
   <div class="hero-body has-text-centered">
     <div class="container">
-      <div class="title"><%= t('home.hero.title') %></div>
-      <div class="subtitle"><%= t('home.hero.subtitle') %></div>
+      <div class="title has-text-white is-size-2-touch is-size-1-desktop"><%= t('home.hero.title') %></div>
+      <div class="subtitle has-text-white is-size-2-touch is-size-1-desktop"><%= t('home.hero.subtitle') %></div>
     </div>
   </div>
 </section>
+
 <section class="section">
-  <h1 class="title"><%= t('label.projects') %></h1>
+  <%= link_to projects_path do %>
+    <h1 class="title"><%= t('label.projects') %></h1>
+  <% end %>
   <hr>
   <%= render 'fragments/project-list', { projects: @projects } %>
+</section>
+
+<section class="section is-gradient">
+  <%= link_to jobs_path do %>
+    <h1 class="title has-text-white"><%= t('label.jobs') %></h1>
+  <% end %>
+  <hr style="background-color: transparent;">
+  <%= render 'fragments/job-list', { jobs: @jobs } %>
 </section>

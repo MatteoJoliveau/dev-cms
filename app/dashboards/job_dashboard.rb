@@ -20,6 +20,7 @@ class JobDashboard < Administrate::BaseDashboard
     starting_date:     Field::DateTime.with_options(format: '%d-%m-%Y'),
     ending_date:       Field::DateTime.with_options(format: '%d-%m-%Y'),
     url:               Field::String,
+    published:         Field::Boolean,
     created_at:        Field::DateTime,
     updated_at:        Field::DateTime
   }.freeze
@@ -32,6 +33,7 @@ class JobDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     company_name
     position
+    published
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -45,6 +47,7 @@ class JobDashboard < Administrate::BaseDashboard
     starting_date
     ending_date
     url
+    published
     created_at
     updated_at
   ].freeze
@@ -61,6 +64,7 @@ class JobDashboard < Administrate::BaseDashboard
     starting_date
     ending_date
     url
+    published
   ].freeze
 
   # Overwrite this method to customize how jobs are displayed

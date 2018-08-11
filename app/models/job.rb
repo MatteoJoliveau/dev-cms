@@ -14,6 +14,7 @@
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #  short_description :string           not null
+#  published         :boolean          default(FALSE)
 #
 
 class Job < ApplicationRecord
@@ -22,7 +23,26 @@ class Job < ApplicationRecord
 
   has_one_attached :image
 
+  scope :published, -> { where(published: true) }
+  scope :order_recent, -> { order(starting_date: :asc) }
+
   validates :company_name, :position, :short_description, :starting_date, presence: true
+
+  def self.current
+    find_by ending_date: nil
+  end
+
+  def published?
+    published
+  end
+
+  def publish
+    update_attribute :published, true
+  end
+
+  def unpublish
+    update_attribute :published, false
+  end
 
   private
 
