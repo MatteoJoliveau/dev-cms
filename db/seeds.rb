@@ -25,8 +25,23 @@ if Rails.env.development?
   end
 end
 
+# Copies
 %w[About Contacts].each { |name| Copy.find_or_create_by! name: name }
 
+# Configs
+%w[
+  footer.copyright-year
+  footer.author
+  footer.license.name
+  footer.license.url
+  footer.vcs.name
+  footer.vcs.url
+].each do |key|
+  config = Config.find_or_initialize_by key: key
+  config.update_attributes! value: '' if config.value.nil?
+end
+
+# Default Admin
 username = 'admin@example.local'
 password = Faker::Internet.password
 admin = Admin.find_or_initialize_by email: username
