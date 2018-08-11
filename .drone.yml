@@ -12,6 +12,7 @@ pipeline:
       - bundle install && yarn install
       - bundle exec rails db:test:prepare
       - bundle exec rspec
+    branches: disabled
 
   build-staging:
     image: plugins/docker
