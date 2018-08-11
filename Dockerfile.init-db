@@ -3,7 +3,7 @@ FROM circleci/ruby:2.5.1-node
 USER root
 
 RUN mkdir -p /usr/local/app
-
+RUN useradd -ms /bin/bash rails
 RUN chown rails /usr/local/app
 
 USER rails
