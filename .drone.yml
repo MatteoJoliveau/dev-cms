@@ -1,8 +1,6 @@
 pipeline:
   test:
     image: circleci/ruby:2.5.1-node
-    cache:
-      - /tmp/bundler/home/unknown
     environment:
       - RAILS_ENV=test
       - RAILS_MASTER_KEY=9ccfd6e620c80aae1bcd36c509407778
