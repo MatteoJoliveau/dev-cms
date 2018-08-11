@@ -17,6 +17,7 @@ class ProjectDashboard < Administrate::BaseDashboard
     website:     Field::String,
     description: Field::Text,
     star:        Field::Boolean,
+    image:       Field::Image,
     created_at:  Field::DateTime,
     updated_at:  Field::DateTime
   }.freeze
@@ -38,9 +39,10 @@ class ProjectDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     id
     name
+    description
+    image
     url
     website
-    description
     star
     created_at
     updated_at
@@ -51,9 +53,10 @@ class ProjectDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     name
+    description
+    image
     url
     website
-    description
     star
   ].freeze
 

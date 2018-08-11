@@ -1,0 +1,12 @@
+defaults: &defaults
+  thumbnail: 114x114
+  scaled: 700x
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

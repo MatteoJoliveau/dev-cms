@@ -31,3 +31,9 @@
 
 en:
   hello: "Hello world"
+  home:
+    hero:
+      subtitle: "Software Developer and Cloud Enthusiast"
+    projects:
+      title: "Projects"
+  projects: "Projects"

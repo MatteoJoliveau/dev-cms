@@ -14,3 +14,7 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+Array.prototype.flat = function () {
+  return this.reduce((acc, val) => acc.concat(val), []);
+};

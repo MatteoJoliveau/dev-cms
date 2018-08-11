@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.5'
 # Backoffice Application
 gem 'administrate', '~> 0.10.0'
 # Slug generators
+gem 'aws-sdk-s3', '~> 1.17', require: false
 gem 'friendly_id', '~> 5.2'
 
 # Use Redis adapter to run Action Cable in production
@@ -65,3 +66,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+
+gem 'administrate-field-image', '~> 1.1'

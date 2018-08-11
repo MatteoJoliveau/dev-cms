@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   end
 
   root 'home#index'
+  resources :projects, only: %i[index show]
 end

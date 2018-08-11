@@ -18,4 +18,8 @@
 class Project < ApplicationRecord
   extend FriendlyId
   friendly_id :name, use: %i[slugged finders]
+
+  has_one_attached :image
+
+  scope :starred, -> { where(star: true) }
 end
