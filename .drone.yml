@@ -1,0 +1,12 @@
+pipeline:
+  build-staging:
+    image: plugins/docker
+    repo: registry.evilcorp.gq/matteojoliveau/dev-cms
+    registry: registry.evilcorp.gq
+    tags: "${DRONE_COMMIT_SHA:0:8}"
+
+  build-production:
+      image: plugins/docker
+      repo: registry.evilcorp.gq/matteojoliveau/dev-cms
+      registry: registry.evilcorp.gq
+      tags: latest
