@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@ckeditor/ckeditor5-build-balloon@^11.0.1":
+  version "11.0.1"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-build-balloon/-/ckeditor5-build-balloon-11.0.1.tgz#fa93ce62a2099a80c8ec8f40e3bc8195d3cc010c"
+
 "@rails/webpacker@3.5":
   version "3.5.5"
   resolved "https://registry.yarnpkg.com/@rails/webpacker/-/webpacker-3.5.5.tgz#8911c66bcefc8bc6b91270e92f0d39e3c2d43116"

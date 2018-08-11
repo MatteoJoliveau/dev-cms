@@ -1,6 +1,6 @@
 # FriendlyId Global Configuration
 #
-# Use this to set up shared configuration options for your entire application.
+# Use this to set up fragments configuration options for your entire application.
 # Any of the configuration options shown here can also be applied to single
 # models by passing arguments to the `friendly_id` class method or defining
 # methods in your model.

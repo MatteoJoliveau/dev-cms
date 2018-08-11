@@ -1,46 +1,13 @@
 <section class="hero is-medium is-primary">
   <div class="hero-body has-text-centered">
     <div class="container">
-      <div class="title">Matteo Joliveau</div>
+      <div class="title"><%= t('home.hero.title') %></div>
       <div class="subtitle"><%= t('home.hero.subtitle') %></div>
     </div>
   </div>
 </section>
 <section class="section">
-  <h1 class="title"><%= t('home.projects.title') %></h1>
+  <h1 class="title"><%= t('label.projects') %></h1>
   <hr>
-  <div class="columns is-multiline is-centered">
-    <% @projects.each do |project| %>
-      <div class="column is-one-third">
-        <div class="card">
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <%= image_tag url_for(project.image) %>
-            </figure>
-          </div>
-          <header class="card-header">
-            <%= link_to project_path(project), class: 'card-header-title' do %>
-              <p class=""><%= project.name %></p>
-            <% end %>
-            <div class="card-header-icon">
-              <span class="icon">
-                <i class="mdi mdi-star" aria-hidden="true"></i>
-              </span>
-            </div>
-          </header>
-          <div class="card-content">
-            <%= project.description %>
-          </div>
-          <footer class="card-footer">
-            <% [
-                   { name: 'URL', url: project.url },
-                   { name: 'Website', url: project.website }
-               ].each do |link| %>
-              <%= link_to(link[:name], link[:url], class: 'card-footer-item', target: '_blank') if link[:url].present? %>
-            <% end %>
-          </footer>
-        </div>
-      </div>
-    <% end %>
-  </div>
+  <%= render 'fragments/project-list', { projects: @projects } %>
 </section>

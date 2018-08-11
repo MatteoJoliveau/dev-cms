@@ -2,6 +2,7 @@
   "name": "dev-cms",
   "private": true,
   "dependencies": {
+    "@ckeditor/ckeditor5-build-balloon": "^11.0.1",
     "@rails/webpacker": "3.5",
     "bulma": "^0.7.1"
   },

@@ -14,7 +14,8 @@ file_path = Rails.root.join('spec/fixtures/files/rails-logo.png')
     name: Faker::Fallout.character,
     url: Faker::Internet.url,
     description: Faker::Lorem.paragraph,
-    star: ((n + 1) % 2).zero?
+    star: ((n + 1) % 2).zero?,
+    published: true
   )
   image = File.open(file_path)
   project.image.attach(io: image, filename: 'rails-logo.png')

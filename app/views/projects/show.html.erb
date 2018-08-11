@@ -1,0 +1,40 @@
+<section class="section">
+  <h1 class="title"><%= @project.name %></h1>
+  <hr>
+
+  <div class="box">
+    <article class="media">
+      <div class="media-left">
+        <figure class="image">
+          <%= image_tag @project.image.variant(ImageVariants::THUMBNAIL) %>
+        </figure>
+      </div>
+      <div class="media-content">
+        <div class="content">
+          <%= @project.description %>
+        </div>
+        <nav class="level is-mobile">
+          <div class="level-left">
+            <!--            <a class="level-item" aria-label="reply">-->
+            <%= link_to @project.url,
+                        class: 'level-item',
+                        'aria-label': 'url',
+                        target: '_blank' do %>
+            <span class="icon is-large">
+              <i class="mdi mdi-open-in-new" aria-hidden="true"></i>
+            </span>
+            <% end %>
+            <%= link_to @project.website,
+                        class: 'level-item',
+                        'aria-label': 'website',
+                        target: '_blank' do %>
+            <span class="icon is-large">
+              <i class="mdi mdi-link" aria-hidden="true"></i>
+            </span>
+            <% end if @project.website %>
+          </div>
+        </nav>
+      </div>
+    </article>
+  </div>
+</section>

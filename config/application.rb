@@ -31,7 +31,6 @@ module DevCms
 
     # Don't generate system test files.
     config.generators.system_tests = nil
-    config.assets.paths << Rails.root.join('node_modules')
 
     # Image Variants sizes
     config.image_variants = config_for(:image_variants)

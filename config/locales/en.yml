@@ -30,10 +30,14 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  label:
+    projects: "Projects"
+    description: "Description"
+    about: "About Me"
+    contacts: "Contacts"
   home:
     hero:
       subtitle: "Software Developer and Cloud Enthusiast"
-    projects:
-      title: "Projects"
-  projects: "Projects"
+      title: "Matteo Joliveau"
+  projects:
+    subtitle: "My open source effort and personal projects"

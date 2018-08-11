@@ -17,9 +17,30 @@
 
 class Project < ApplicationRecord
   extend FriendlyId
-  friendly_id :name, use: %i[slugged finders]
+  friendly_id :name, use: %i[slugged finders history]
 
   has_one_attached :image
 
   scope :starred, -> { where(star: true) }
+  scope :published, -> { where(published: true) }
+
+  validates_presence_of :name
+
+  def published?
+    published
+  end
+
+  def publish
+    update_attribute :published, true
+  end
+
+  def unpublish
+    update_attribute :published, false
+  end
+
+  private
+
+  def should_generate_new_friendly_id?
+    name_changed?
+  end
 end
