@@ -10,13 +10,10 @@ USER rails
 
 WORKDIR /usr/local/app
 
-COPY Gemfile /user/local/app
-COPY package.json /user/local/app
+COPY . /user/local/app
 
 RUN bundle install
 RUN yarn install
-
-COPY . /user/local/app
 
 RUN /user/local/app/bin/webpack
 RUN bundle exec rails asset:precompile

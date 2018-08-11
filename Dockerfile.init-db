@@ -10,11 +10,10 @@ USER rails
 
 WORKDIR /usr/local/app
 
-COPY Gemfile /user/local/app
+COPY . /user/local/app
 
 RUN bundle install
 
-COPY . /user/local/app
 
 ENTRYPOINT ["bundle", "exec", "rails", "db:migrate", "db:seed"]
 
