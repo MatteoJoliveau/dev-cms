@@ -35,7 +35,7 @@
     <div class="timeline-item">
       <div class="timeline-marker"></div>
       <div class="timeline-content">
-        <%= link_to job.url do %>
+        <%= link_to job.url, target: '_blank' do %>
           <p class="heading"><%= job.company_name %></p>
         <% end %>
         <%= link_to job, style: 'color: inherit;' do %>

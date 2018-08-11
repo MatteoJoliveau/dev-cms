@@ -1,17 +1,17 @@
 <section class="section">
-  <h1 class="title"><%= @job.position %> <%= t('label.at')%> <%= @job.company_name %></h1>
+  <%= link_to "#{t('cta.back-to')} #{t('label.jobs')}", jobs_path %>
+
+  <hr>
+  <figure class="image">
+    <%= image_tag @job.image.variant(ImageVariants::SCALED) %>
+  </figure>
+  <h1 class="title"><%= @job.position %> <%= t('label.at') %> <%= @job.company_name %></h1>
   <h1 class="subtitle"><%= @job.short_description %></h1>
   <hr>
 
   <div class="box">
     <article class="media">
-      <div class="media-left">
-
-      </div>
       <div class="media-content">
-        <figure class="image">
-          <%= image_tag @job.image.variant(ImageVariants::SCALED) %>
-        </figure>
         <%= render 'fragments/content', { content: @job.description } %>
         <nav class="level is-mobile">
           <div class="level-left">
