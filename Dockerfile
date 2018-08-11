@@ -12,6 +12,8 @@ WORKDIR /usr/local/app
 
 COPY . /user/local/app
 
+RUN ls
+
 RUN bundle install
 RUN yarn install
 
