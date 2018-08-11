@@ -1,6 +1,12 @@
 FROM circleci/ruby:2.5.1-node
 
+USER root
+
 RUN mkdir -p /usr/local/app
+
+RUN chown rails /usr/local/app
+
+USER rails
 
 WORKDIR /usr/local/app
 
