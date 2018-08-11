@@ -1,12 +1,33 @@
 pipeline:
+  test:
+    image: circleci/ruby:2.5.1-node
+    environment:
+      - RAILS_ENV=test
+      - RAILS_MASTER_KEY=9ccfd6e620c80aae1bcd36c509407778
+      - POSTGRES_USER=circleci
+      - POSTGRES_DB=circle_test
+    commands:
+      - bundle install && npm install
+      - bundle exec rails db:test:prepare
+      - bundle exec rspec
+
   build-staging:
     image: plugins/docker
     repo: registry.evilcorp.gq/matteojoliveau/dev-cms
     registry: registry.evilcorp.gq
     tags: "${DRONE_COMMIT_SHA:0:8}"
+    branches: develop
 
   build-production:
       image: plugins/docker
       repo: registry.evilcorp.gq/matteojoliveau/dev-cms
       registry: registry.evilcorp.gq
       tags: latest
+  branches: master
+
+services:
+  database:
+    image: circleci/postgres:10.4-alpine
+    environment:
+      - POSTGRES_USER=circleci
+      - POSTGRES_DB=circle_test
