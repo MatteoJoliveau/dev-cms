@@ -1,0 +1,14 @@
+FROM circleci/ruby:2.5.1-node
+
+RUN mkdir -p /usr/src/app
+
+WORKDIR /usr/src/app
+
+COPY Gemfile /user/src/app
+
+RUN bundle install
+
+COPY . /user/src/app
+
+ENTRYPOINT ["bundle", "exec", "rails", "db:migrate", "db:seed"]
+

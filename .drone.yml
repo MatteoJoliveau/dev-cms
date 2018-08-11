@@ -1,29 +1,45 @@
-pipeline:
-  test:
-    image: circleci/ruby:2.5.1-node
-    environment:
-      - RAILS_ENV=test
-      - RAILS_MASTER_KEY=9ccfd6e620c80aae1bcd36c509407778
-      - POSTGRES_USER=circleci
-      - POSTGRES_DB=circle_test
-    commands:
-      - bundle install && yarn install
-      - bundle exec rails db:test:prepare
-      - bundle exec rspec
-    branches: disabled
+#  test:
+#    image: circleci/ruby:2.5.1-node
+#    environment:
+#      - RAILS_ENV=test
+#      - RAILS_MASTER_KEY=9ccfd6e620c80aae1bcd36c509407778
+#      - POSTGRES_USER=circleci
+#      - POSTGRES_DB=circle_test
+#    commands:
+#      - bundle install && yarn install
+#      - bundle exec rails db:test:prepare
+#      - bundle exec rspec
+#  branches: disabled
 
-  build-staging:
+pipeline:
+  build-app-staging:
     image: plugins/docker
     repo: registry.evilcorp.gq/matteojoliveau/dev-cms
     registry: registry.evilcorp.gq
     tags: "${DRONE_COMMIT_SHA:0:8}"
     branches: develop
 
-  build-production:
+  build-db-staging:
+    image: plugins/docker
+    repo: registry.evilcorp.gq/matteojoliveau/dev-cms-init-db
+    registry: registry.evilcorp.gq
+    tags: "${DRONE_COMMIT_SHA:0:8}"
+    dockerfile: Dockerfile.init-db
+    branches: develop
+
+  build-app-production:
     image: plugins/docker
     repo: registry.evilcorp.gq/matteojoliveau/dev-cms
     registry: registry.evilcorp.gq
     tags: latest
+    branches: master
+
+  build-db-production:
+    image: plugins/docker
+    repo: registry.evilcorp.gq/matteojoliveau/dev-cms-init-db
+    registry: registry.evilcorp.gq
+    tags: "${DRONE_COMMIT_SHA:0:8}"
+    dockerfile: Dockerfile.init-db
     branches: master
 
 services:
