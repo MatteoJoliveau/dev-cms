@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: projects
@@ -13,6 +12,7 @@
 #  star        :boolean          default(FALSE)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  published   :boolean          default(FALSE)
 #
 
 class Project < ApplicationRecord

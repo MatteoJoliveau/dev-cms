@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_11_171603) do
+ActiveRecord::Schema.define(version: 2018_08_11_180437) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,20 @@ ActiveRecord::Schema.define(version: 2018_08_11_171603) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
 
+  create_table "jobs", force: :cascade do |t|
+    t.string "company_name", null: false
+    t.string "position", null: false
+    t.text "description"
+    t.string "slug", null: false
+    t.date "starting_date", null: false
+    t.date "ending_date"
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "short_description", null: false
+    t.index ["slug"], name: "index_jobs_on_slug", unique: true
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string "name", null: false
     t.string "slug", null: false
@@ -66,6 +80,7 @@ ActiveRecord::Schema.define(version: 2018_08_11_171603) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "published", default: false
+    t.index ["slug"], name: "index_projects_on_slug", unique: true
   end
 
 end
