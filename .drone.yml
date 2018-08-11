@@ -19,11 +19,11 @@ pipeline:
     branches: develop
 
   build-production:
-      image: plugins/docker
-      repo: registry.evilcorp.gq/matteojoliveau/dev-cms
-      registry: registry.evilcorp.gq
-      tags: latest
-  branches: master
+    image: plugins/docker
+    repo: registry.evilcorp.gq/matteojoliveau/dev-cms
+    registry: registry.evilcorp.gq
+    tags: latest
+    branches: master
 
 services:
   database:
