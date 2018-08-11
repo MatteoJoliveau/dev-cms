@@ -287,6 +287,7 @@ DEPENDENCIES
   administrate-field-image (~> 1.1)
   annotate (~> 2.7)
   aws-sdk-s3 (~> 1.17)
+  bcrypt (~> 3.1.7)
   bootsnap (>= 1.1.0)
   byebug
   clearance (~> 1.16)

@@ -1,0 +1,22 @@
+<header class="main-content__header" role="banner">
+  <h1 class="main-content__page-title" id="page-title">
+    <%= t(".title") %>
+  </h1>
+  <p><%= t(".description") %></p>
+</header>
+<section class="main-content__body">
+  <div id="clearance" class="password-reset">
+    <%= form_for :password_reset,
+                 url: admin_password_path(@user, token: @user.confirmation_token),
+                 html: { method: :put } do |form| %>
+      <div class="password-field">
+        <%= form.label :password %>
+        <%= form.password_field :password %>
+      </div>
+
+      <div class="submit-field">
+        <%= form.submit %>
+      </div>
+    <% end %>
+  </div>
+</section>

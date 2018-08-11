@@ -1,0 +1,13 @@
+<header class="main-content__header" role="banner">
+  <h1 class="main-content__page-title" id="page-title">
+    <%= t(".title") %>
+  </h1>
+</header>
+<section class="main-content__body">
+  <div id="clearance" class="sign-in">
+    <%= render partial: '/sessions/form' %>
+  </div>
+</section>
+<% content_for :title do %>
+  Sign In
+<% end %>

@@ -48,3 +48,8 @@ en:
     subtitle: "Past and present work experience"
   cta:
     back-to: "Back to"
+  helpers:
+    label:
+      admin:
+        confirm-password: Confirm Password
+        current-password: Current Password
