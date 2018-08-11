@@ -1,13 +1,15 @@
 pipeline:
   test:
     image: circleci/ruby:2.5.1-node
+    cache:
+      - /tmp/bundler/home/unknown
     environment:
       - RAILS_ENV=test
       - RAILS_MASTER_KEY=9ccfd6e620c80aae1bcd36c509407778
       - POSTGRES_USER=circleci
       - POSTGRES_DB=circle_test
     commands:
-      - bundle install && npm install
+      - bundle install && yarn install
       - bundle exec rails db:test:prepare
       - bundle exec rspec
 
