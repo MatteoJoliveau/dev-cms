@@ -34,5 +34,6 @@ module DevCms
 
     # Image Variants sizes
     config.image_variants = config_for(:image_variants)
+    config.filter_parameters << :password
   end
 end

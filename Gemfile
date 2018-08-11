@@ -73,3 +73,5 @@ gem 'administrate-field-ckeditor', '~> 0.0.9'
 gem 'administrate-field-image', '~> 1.1'
 
 gem 'clearance', '~> 1.16'
+
+gem 'sentry-raven', '~> 2.7'

@@ -10,6 +10,12 @@ class Admin::ApplicationController < Administrate::ApplicationController
   include Clearance::Controller
 
   before_action :require_login
+  before_action :set_raven_context
+
+  def set_raven_context
+    Raven.user_context(email: current_user.email) # or anything else in session
+    Raven.extra_context(params: params.to_unsafe_h, url: request.url)
+  end
 
   # Override this value to specify the number of elements to display at a time
   # on index pages. Defaults to 20.
