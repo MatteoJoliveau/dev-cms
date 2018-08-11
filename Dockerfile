@@ -1,6 +1,14 @@
 FROM circleci/ruby:2.5.1-node
 
+USER root
+
+RUN useradd -ms /bin/bash rails
+
 WORKDIR /usr/local/app
+
+RUN chown rails /usr/local/app
+
+USER rails
 
 COPY Gemfile .
 COPY Gemfile.lock .
