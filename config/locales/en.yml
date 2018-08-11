@@ -37,6 +37,7 @@ en:
     contacts: "Contacts"
     jobs: "Career"
     at: "at"
+    present: "Present"
   home:
     hero:
       subtitle: "Software Developer and Cloud Enthusiast"

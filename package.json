@@ -4,7 +4,8 @@
   "dependencies": {
     "@ckeditor/ckeditor5-build-balloon": "^11.0.1",
     "@rails/webpacker": "3.5",
-    "bulma": "^0.7.1"
+    "bulma": "^0.7.1",
+    "bulma-timeline": "^3.0.0"
   },
   "devDependencies": {
     "webpack-dev-server": "2.11.2"

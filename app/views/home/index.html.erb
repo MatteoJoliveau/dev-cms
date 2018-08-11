@@ -15,10 +15,10 @@
   <%= render 'fragments/project-list', { projects: @projects } %>
 </section>
 
-<section class="section is-gradient">
+<section class="section">
   <%= link_to jobs_path do %>
-    <h1 class="title has-text-white"><%= t('label.jobs') %></h1>
+    <h1 class="title"><%= t('label.jobs') %></h1>
   <% end %>
-  <hr style="background-color: transparent;">
+  <hr>
   <%= render 'fragments/job-list', { jobs: @jobs } %>
 </section>

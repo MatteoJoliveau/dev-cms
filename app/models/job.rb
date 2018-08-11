@@ -24,7 +24,7 @@ class Job < ApplicationRecord
   has_one_attached :image
 
   scope :published, -> { where(published: true) }
-  scope :order_recent, -> { order(starting_date: :asc) }
+  scope :order_recent, -> { order(starting_date: :desc) }
 
   validates :company_name, :position, :short_description, :starting_date, presence: true
 
