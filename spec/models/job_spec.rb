@@ -1,19 +1,19 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: jobs
 #
-#  id            :bigint(8)        not null, primary key
-#  company_name  :string           not null
-#  position      :string           not null
-#  description   :text
-#  slug          :string           not null
-#  starting_date :date             not null
-#  ending_date   :date
-#  url           :string
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
+#  id                :bigint(8)        not null, primary key
+#  company_name      :string           not null
+#  position          :string           not null
+#  description       :text
+#  slug              :string           not null
+#  starting_date     :date             not null
+#  ending_date       :date
+#  url               :string
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  short_description :string           not null
 #
 
 require 'rails_helper'
