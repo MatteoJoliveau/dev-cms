@@ -80,6 +80,7 @@ GEM
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.0)
     aws-sigv4 (1.0.3)
+    bcrypt (3.1.12)
     bindex (0.5.0)
     bootsnap (1.3.1)
       msgpack (~> 1.0)
@@ -88,6 +89,10 @@ GEM
     ckeditor (4.2.4)
       cocaine
       orm_adapter (~> 0.5.0)
+    clearance (1.16.1)
+      bcrypt
+      email_validator (~> 1.4)
+      rails (>= 3.1)
     climate_control (0.2.0)
     cocaine (0.6.0)
       terrapin (= 0.6.0)
@@ -96,6 +101,8 @@ GEM
     datetime_picker_rails (0.0.7)
       momentjs-rails (>= 2.8.1)
     diff-lcs (1.3)
+    email_validator (1.6.0)
+      activemodel
     erubi (1.7.1)
     execjs (2.7.0)
     factory_bot (4.10.0)
@@ -282,6 +289,7 @@ DEPENDENCIES
   aws-sdk-s3 (~> 1.17)
   bootsnap (>= 1.1.0)
   byebug
+  clearance (~> 1.16)
   factory_bot_rails (~> 4.10)
   faker (~> 1.9)
   friendly_id (~> 5.2)

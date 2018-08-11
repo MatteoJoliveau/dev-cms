@@ -69,4 +69,7 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'administrate-field-ckeditor', '~> 0.0.9'
+
 gem 'administrate-field-image', '~> 1.1'
+
+gem 'clearance', '~> 1.16'
