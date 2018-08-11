@@ -29,8 +29,8 @@ class ProjectDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     id
     name
-    slug
     url
+    star
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -38,7 +38,6 @@ class ProjectDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     id
     name
-    slug
     url
     website
     description
@@ -52,7 +51,6 @@ class ProjectDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     name
-    slug
     url
     website
     description
