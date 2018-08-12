@@ -1,6 +1,7 @@
 FROM ruby:2.5
 
-RUN apt update && apt install build-essential nodejs yarn libpq-dev
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+RUN apt update -y && apt install build-essential nodejs yarn libpq-dev -y
 
 RUN mkdir /app
 WORKDIR /app
