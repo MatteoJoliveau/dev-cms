@@ -12,8 +12,6 @@ USER rails
 
 COPY Gemfile .
 COPY Gemfile.lock .
-COPY package.json .
-COPY yarn.lock .
 
 RUN bundle install --jobs 20 --retry 5 --without development test
 RUN yarn install

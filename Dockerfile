@@ -20,7 +20,6 @@ RUN yarn install
 
 COPY . /user/local/app
 
-RUN bin/webpack
 RUN bundle exec rails asset:precompile
 
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
