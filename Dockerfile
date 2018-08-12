@@ -1,26 +1,22 @@
-FROM circleci/ruby:2.5.1-node
+FROM ruby:2.5-alpine
 
-USER root
+RUN apk update && apk add build-base nodejs yarn postgresql-dev tzdata
 
-RUN useradd -ms /bin/bash rails
+RUN mkdir /app
+WORKDIR /app
 
-WORKDIR /usr/local/app
+ENV RAILS_ENV production
+ENV RAILS_SERVE_STATIC_FILES true
+ENV RAILS_LOG_TO_STDOUT true
 
-RUN chown rails /usr/local/app
+COPY Gemfile Gemfile.lock package.json yarn.lock ./
+RUN bundle install --binstubs
 
-USER rails
+COPY . .
 
-COPY Gemfile .
-COPY Gemfile.lock .
-COPY package.json .
-COPY yarn.lock .
+RUN bundle exec rails assets:precompile
 
-RUN bundle install --jobs 20 --retry 5 --without development test
-RUN yarn install
+CMD puma -C config/puma.rb
 
-COPY . /user/local/app
-
-RUN bundle exec rails asset:precompile
-
-CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
+#CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
 
