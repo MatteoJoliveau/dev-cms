@@ -6,7 +6,7 @@
     <%= image_tag @job.image.variant(ImageVariants::SCALED) %>
   </figure>
   <h1 class="title"><%= @job.position %> <%= t('label.at') %> <%= @job.company_name %></h1>
-  <h1 class="subtitle"><%= @job.short_description %></h1>
+  <h2 class="subtitle"><%= @job.short_description %></h2>
   <p class="has-text-grey">
     <%= @job.starting_date.strftime('%B %Y') %>
     -

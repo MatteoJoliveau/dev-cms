@@ -10,17 +10,18 @@ class ProjectDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    id:          Field::Number,
-    name:        Field::String,
-    slug:        Field::String,
-    url:         Field::String,
-    website:     Field::String,
-    description: Field::Text,
-    star:        Field::Boolean,
-    published:   Field::Boolean,
-    image:       Field::Image,
-    created_at:  Field::DateTime,
-    updated_at:  Field::DateTime
+    id:                Field::Number,
+    name:              Field::String,
+    slug:              Field::String,
+    url:               Field::String,
+    website:           Field::String,
+    short_description: Field::String,
+    description:       Field::Ckeditor,
+    star:              Field::Boolean,
+    published:         Field::Boolean,
+    image:             Field::Image,
+    created_at:        Field::DateTime,
+    updated_at:        Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -30,7 +31,7 @@ class ProjectDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     name
-    url
+    short_description
     star
     published
   ].freeze
@@ -40,6 +41,7 @@ class ProjectDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     id
     name
+    short_description
     description
     image
     url
@@ -55,6 +57,7 @@ class ProjectDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     name
+    short_description
     description
     image
     url
