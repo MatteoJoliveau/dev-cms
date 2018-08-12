@@ -13,7 +13,7 @@ class Admin::ApplicationController < Administrate::ApplicationController
   before_action :set_raven_context
 
   def set_raven_context
-    Raven.user_context(email: current_user.email) # or anything else in session
+    Raven.user_context(email: current_user.email) if current_user.present?
     Raven.extra_context(params: params.to_unsafe_h, url: request.url)
   end
 
