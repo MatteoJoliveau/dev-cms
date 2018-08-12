@@ -12,11 +12,11 @@ if Rails.env.development?
   file_path = Rails.root.join('spec/fixtures/files/rails-logo.png')
   (10 - Project.count).times do |n|
     project = Project.find_or_initialize_by(
-      name: Faker::Fallout.character,
-      url: Faker::Internet.url,
-      description: Faker::Lorem.paragraph,
-      star: ((n + 1) % 2).zero?,
-      published: true
+        name: Faker::Fallout.character,
+        url: Faker::Internet.url,
+        description: Faker::Lorem.paragraph,
+        star: ((n + 1) % 2).zero?,
+        published: true
     )
     image = File.open(file_path)
     project.image.attach(io: image, filename: 'rails-logo.png')
@@ -38,19 +38,21 @@ end
   footer.vcs.url
 ].each do |key|
   config = Config.find_or_initialize_by key: key
-  config.update_attributes! value: 'default' if config.value.present?
+  config.update_attributes! value: (config.value || 'default')
 end
 
 # Default Admin
-username = 'admin@example.local'
-password = 'admin'
-admin = Admin.find_or_initialize_by email: username
-admin.update_attributes! password: password
+unless Admin.exists? email: email
+  email = 'admin@example.local'
+  password = 'admin'
+  admin = Admin.new email: email, password: password
+  admin.save!
 
-puts <<~EOF
-  ============================
-        Default Admin
-  username: #{username}
-  password: #{password}
-  ============================
-EOF
+  puts <<~EOF
+    ============================
+          Default Admin
+    username: #{email}
+    password: #{password}
+    ============================
+  EOF
+end
