@@ -16,7 +16,6 @@
 #  published   :boolean          default(FALSE)
 #
 
-
 FactoryBot.define do
   factory :project do
     name { Faker::Fallout.character }
@@ -26,6 +25,13 @@ FactoryBot.define do
 
     trait :published do
       published { true }
+    end
+
+    after(:build) do |job, _evaluator|
+      job.image.attach(
+        io: File.open(Rails.root.join('spec/fixtures/files/rails-logo.png')),
+        filename: 'rails-logo.png'
+      )
     end
   end
 end

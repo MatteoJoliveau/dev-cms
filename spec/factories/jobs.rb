@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: jobs
@@ -29,6 +30,13 @@ FactoryBot.define do
 
     trait :published do
       published { true }
+    end
+
+    after(:build) do |job, _evaluator|
+      job.image.attach(
+        io: File.open(Rails.root.join('spec/fixtures/files/rails-logo.png')),
+        filename: 'rails-logo.png'
+      )
     end
   end
 end

@@ -26,6 +26,7 @@ class Project < ApplicationRecord
   scope :published, -> { where(published: true) }
 
   validates_presence_of :name
+  validates :image, image: true
 
   def starred?
     star

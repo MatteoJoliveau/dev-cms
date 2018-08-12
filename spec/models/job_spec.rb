@@ -25,6 +25,7 @@ RSpec.describe Job, type: :model do
     it { is_expected.to have(1).error_on :position }
     it { is_expected.to have(1).error_on :starting_date }
     it { is_expected.to have(1).error_on :short_description }
+    it { is_expected.to have(1).error_on :image }
 
     it 'is valid' do
       expect(build(:job)).to be_valid

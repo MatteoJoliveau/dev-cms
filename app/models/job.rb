@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: jobs
@@ -26,7 +27,8 @@ class Job < ApplicationRecord
   scope :published, -> { where(published: true) }
   scope :order_recent, -> { order(starting_date: :desc) }
 
-  validates :company_name, :position, :short_description, :starting_date, presence: true
+  validates_presence_of :company_name, :position, :short_description, :starting_date
+  validates :image, image: true
 
   def self.current
     find_by ending_date: nil
