@@ -1,6 +1,6 @@
-FROM ruby:2.5-alpine
+FROM ruby:2.5
 
-RUN apk update && apk add build-base nodejs yarn postgresql-dev tzdata
+RUN apt update && apt install build-essential nodejs yarn libpq-dev
 
 RUN mkdir /app
 WORKDIR /app
