@@ -1,3 +1,3 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 rails db:migrate db:seed
 puma -C config/puma.rb
