@@ -12,7 +12,7 @@ amazon:
   access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
   secret_access_key: <%= ENV['AWS_SECRET_KEY'] %>
   region: us-east-1
-  bucket: <%= ENV['AWS_BUCKET'] =>
+  bucket: <%= ENV['AWS_BUCKET'] %>
   # remove endpoint if using actual AWS S3 service
-  endpoint: <%= ENV['AWS_ENDPOINT'] =>
+  endpoint: <%= ENV['AWS_ENDPOINT'] %>
 
