@@ -19,9 +19,11 @@
             </div>
           <% end %>
         </header>
-        <div class="card-content">
+        <%= link_to project_path(project), style: 'color: inherit;' do %>
+          <div class="card-content">
           <%= project.short_description %>
-        </div>
+          </div>
+        <% end %>
         <footer class="card-footer">
           <% [
                  { name: 'URL', url: project.url },
