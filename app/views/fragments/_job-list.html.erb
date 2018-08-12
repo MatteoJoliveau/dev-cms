@@ -23,6 +23,6 @@
     </div>
   <% end %>
   <header class="timeline-header">
-    <span class="tag is-medium is-primary"><%= jobs.last&.starting_date.year || Date.today.year %></span>
+    <span class="tag is-medium is-primary"><%= (jobs.last&.starting_date || Date.today).year %></span>
   </header>
 </div>
