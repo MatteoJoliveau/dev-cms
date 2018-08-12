@@ -20,6 +20,7 @@ pipeline:
     when:
       event: [push]
       branch: develop
+    secrets: [rails_master_key]
 
   build-db-staging:
     image: plugins/docker
@@ -30,6 +31,7 @@ pipeline:
     when:
       event: [push]
       branch: develop
+    secrets: [rails_master_key]
 
   build-app-production:
     image: plugins/docker
@@ -39,6 +41,7 @@ pipeline:
     when:
       event: [push, tag]
       branch: master
+    secrets: [rails_master_key]
 
   build-db-production:
     image: plugins/docker
@@ -49,6 +52,7 @@ pipeline:
     when:
       event: [push, tag]
       branch: master
+    secrets: [rails_master_key]
 
 services:
   database:
