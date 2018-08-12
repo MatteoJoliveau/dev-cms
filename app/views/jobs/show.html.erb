@@ -7,6 +7,11 @@
   </figure>
   <h1 class="title"><%= @job.position %> <%= t('label.at') %> <%= @job.company_name %></h1>
   <h1 class="subtitle"><%= @job.short_description %></h1>
+  <p class="has-text-grey">
+    <%= @job.starting_date.strftime('%B %Y') %>
+    -
+    <%= @job.ending_date&.strftime('%B %Y') || t('label.present') %>
+  </p>
   <hr>
 
   <div class="box">

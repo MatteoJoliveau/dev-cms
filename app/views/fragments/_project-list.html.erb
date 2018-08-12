@@ -3,8 +3,8 @@
     <div class="column is-one-third">
       <div class="card">
         <%= link_to project_path(project), class: 'card-image' do %>
-          <figure class="image is-4by3">
-            <%= image_tag url_for(project.image) %>
+          <figure class="image">
+            <%= image_tag project.image.variant(ImageVariants::SMALL) %>
           </figure>
         <% end %>
         <header class="card-header">
