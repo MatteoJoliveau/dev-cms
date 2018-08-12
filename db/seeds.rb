@@ -42,8 +42,8 @@ end
 end
 
 # Default Admin
+email = 'admin@example.local'
 unless Admin.exists? email: email
-  email = 'admin@example.local'
   password = 'admin'
   admin = Admin.new email: email, password: password
   admin.save!
