@@ -1,32 +1,3 @@
-<!--<div class="columns is-multiline is-centered">-->
-<%# jobs.each do |job| %>
-<!--    <div class="column is-one-third">-->
-<!--      <div class="card">-->
-<%#= link_to job_path(job), class: 'card-image' do %>
-<!--          <figure class="image">-->
-<%#= image_tag job.image.variant(ImageVariants::SMALL) %>
-<!--          </figure>-->
-<%# end %>
-<!--        <header class="card-header">-->
-<%#= link_to job_path(job), class: 'card-header-title' do %>
-<!--            <p class=""><%#= job.company_name %></p>-->
-<%# end %>
-<!--        </header>-->
-<!--        <div class="card-content">-->
-<%#= job.short_description %>
-<!--        </div>-->
-<!--        <footer class="card-footer">-->
-<%# [
-                 { name: 'URL', url: job.url },
-             ].each do |link| %>
-<%#= link_to(link[:name], link[:url], class: 'card-footer-item', target: '_blank') if link[:url].present? %>
-<%# end %>
-<!--        </footer>-->
-<!--      </div>-->
-<!--    </div>-->
-<%# end %>
-<!--</div>-->
-
 <div class="timeline">
   <header class="timeline-header">
     <span class="tag is-medium is-primary"><%= Date.today.year %></span>
@@ -52,6 +23,6 @@
     </div>
   <% end %>
   <header class="timeline-header">
-    <span class="tag is-medium is-primary"><%= jobs.last.starting_date.year %></span>
+    <span class="tag is-medium is-primary"><%= jobs.last&.starting_date.year || Date.today.year %></span>
   </header>
 </div>
