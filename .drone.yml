@@ -17,7 +17,9 @@ pipeline:
     repo: registry.evilcorp.gq/matteojoliveau/dev-cms
     registry: registry.evilcorp.gq
     tags: "${DRONE_COMMIT_SHA:0:8}"
-    branches: develop
+    when:
+      event: [push]
+      branch: develop
 
   build-db-staging:
     image: plugins/docker
@@ -25,14 +27,18 @@ pipeline:
     registry: registry.evilcorp.gq
     tags: "${DRONE_COMMIT_SHA:0:8}"
     dockerfile: Dockerfile.init-db
-    branches: develop
+    when:
+      event: [push]
+      branch: develop
 
   build-app-production:
     image: plugins/docker
     repo: registry.evilcorp.gq/matteojoliveau/dev-cms
     registry: registry.evilcorp.gq
     tags: latest
-    branches: master
+    when:
+      event: [push, tag]
+      branch: master
 
   build-db-production:
     image: plugins/docker
@@ -40,7 +46,9 @@ pipeline:
     registry: registry.evilcorp.gq
     tags: "${DRONE_COMMIT_SHA:0:8}"
     dockerfile: Dockerfile.init-db
-    branches: master
+    when:
+      event: [push, tag]
+      branch: master
 
 services:
   database:
