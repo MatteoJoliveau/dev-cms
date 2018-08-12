@@ -38,12 +38,12 @@ end
   footer.vcs.url
 ].each do |key|
   config = Config.find_or_initialize_by key: key
-  config.update_attributes! value: '' if config.value.nil?
+  config.update_attributes! value: 'default' if config.value.present?
 end
 
 # Default Admin
 username = 'admin@example.local'
-password = Faker::Internet.password
+password = 'admin'
 admin = Admin.find_or_initialize_by email: username
 admin.update_attributes! password: password
 
