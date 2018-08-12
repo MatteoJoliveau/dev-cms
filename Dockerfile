@@ -16,4 +16,4 @@ COPY . .
 
 RUN bundle exec rails assets:precompile
 
-CMD puma -C config/puma.rb
+CMD /app/docker-entrypoint.sh
