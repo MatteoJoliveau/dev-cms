@@ -21,6 +21,7 @@ pipeline:
       event: [push]
       branch: develop
     secrets: [rails_master_key]
+    build_args_from_env: [ RAILS_MASTER_KEY ]
 
   build-db-staging:
     image: plugins/docker
@@ -32,6 +33,7 @@ pipeline:
       event: [push]
       branch: develop
     secrets: [rails_master_key]
+    build_args_from_env: [ RAILS_MASTER_KEY ]
 
   build-app-production:
     image: plugins/docker
@@ -42,6 +44,7 @@ pipeline:
       event: [push, tag]
       branch: master
     secrets: [rails_master_key]
+    build_args_from_env: [ RAILS_MASTER_KEY ]
 
   build-db-production:
     image: plugins/docker
@@ -53,6 +56,7 @@ pipeline:
       event: [push, tag]
       branch: master
     secrets: [rails_master_key]
+    build_args_from_env: [ RAILS_MASTER_KEY ]
 
 services:
   database:
