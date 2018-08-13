@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type='text/xsl' href='<%= asset_path('xml-sitemap.xsl') %>'?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 ">
+  <url>
+    <loc><%= root_url %></loc>
+    <lastmod><%= iso_date home_last_modified %></lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc><%= projects_url %></loc>
+    <lastmod><%= iso_date project_last_modified %></lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc><%= jobs_url %></loc>
+    <lastmod><%= iso_date job_last_modified %></lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc><%= about_url %></loc>
+    <lastmod><%= iso_date about_last_modified %></lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc><%= contacts_url %></loc>
+    <lastmod><%= iso_date contacts_last_modified %></lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!--  Projects-->
+  <% @projects.each do |project| %>
+  <url>
+    <loc><%= project_url project %></loc>
+    <lastmod><%= iso_date project.updated_at %></lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <% end %>
+
+  <!--  Jobs-->
+  <% @jobs.each do |job| %>
+  <url>
+    <loc><%= job_url job %></loc>
+    <lastmod><%= iso_date job.updated_at %></lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <% end %>
+</urlset>

@@ -28,5 +28,6 @@ Rails.application.routes.draw do
   resources :projects, only: %i[index show]
   resources :jobs, only: %i[index show]
 
+  get 'sitemap.xml' => 'sitemap#index', defaults: { format: 'xml' }
   get 'health' => 'health#index'
 end
