@@ -8,11 +8,6 @@
 
   <div class="box">
     <article class="media">
-      <div class="media-left">
-        <figure class="image">
-          <%= image_tag @project.image.variant(ImageVariants::THUMBNAIL) %>
-        </figure>
-      </div>
       <div class="media-content">
         <%= render 'fragments/content', { content: @project.description } %>
         <nav class="level is-mobile">
