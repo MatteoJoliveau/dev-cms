@@ -33,3 +33,5 @@ yarn-debug.log*
 *.iml
 .vscode/
 storage/
+
+deploy-to-rancher.sh
