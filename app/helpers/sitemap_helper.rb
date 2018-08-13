@@ -1,10 +1,6 @@
 # frozen_string_literal: true
 
 module SitemapHelper
-  # def domain_url
-  #   @domain_url ||= ENV.fetch('RAILS_DOMAIN_URL', 'http://localhost:3000')
-  # end
-
   def home_last_modified
     [
         project_last_modified,
