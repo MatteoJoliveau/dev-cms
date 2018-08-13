@@ -9,7 +9,7 @@
         <% end %>
         <header class="card-header">
           <%= link_to project_path(project), class: 'card-header-title' do %>
-            <p class=""><%= project.name %></p>
+            <p><%= project.name %></p>
           <% end %>
           <% if project.starred? %>
             <div class="card-header-icon">
@@ -19,11 +19,21 @@
             </div>
           <% end %>
         </header>
-        <%= link_to project_path(project), style: 'color: inherit;' do %>
-          <div class="card-content">
-          <%= project.short_description %>
-          </div>
-        <% end %>
+        <div class="card-content">
+          <% if project.tag_list.any? %>
+            <div class="level">
+              <div class="level-left">
+                <% project.tag_list.each do |tag| %>
+                  <%= link_to tag, projects_path(tag: tag), class: 'dev-project-tag' %>
+                  <%#= content_tag :span, tag, class: 'dev-project-tag' %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+          <%= link_to project_path(project), style: 'color: inherit;' do %>
+            <%= project.short_description %>
+          <% end %>
+        </div>
         <footer class="card-footer">
           <% [
                  { name: 'URL', url: project.url },

@@ -1,3 +1,9 @@
 @import "../../../node_modules/bulma/sass/utilities/all.sass";
 @import "../../../node_modules/bulma/bulma.sass";
 @import "../../../node_modules/bulma-timeline/src/sass/index.sass";
+
+.dev-project-tag {
+  @extend .tag;
+  @extend .is-success;
+  @extend .level-item;
+}

@@ -19,11 +19,13 @@
 class Project < ApplicationRecord
   extend FriendlyId
   friendly_id :name, use: %i[slugged finders history]
+  acts_as_taggable
 
   has_one_attached :image
 
   scope :starred, -> { where(star: true) }
   scope :published, -> { where(published: true) }
+  scope :by_tag, ->(tag) { tag.present? ? tagged_with(tag) : all }
 
   validates_presence_of :name, :short_description
   validates :image, image: true

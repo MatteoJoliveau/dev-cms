@@ -20,6 +20,7 @@ class ProjectDashboard < Administrate::BaseDashboard
     star:              Field::Boolean,
     published:         Field::Boolean,
     image:             Field::Image,
+    tag_list:          Field::String,
     created_at:        Field::DateTime,
     updated_at:        Field::DateTime
   }.freeze
@@ -39,10 +40,10 @@ class ProjectDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-    id
     name
     short_description
     description
+    tag_list
     image
     url
     website
@@ -59,6 +60,7 @@ class ProjectDashboard < Administrate::BaseDashboard
     name
     short_description
     description
+    tag_list
     image
     url
     website

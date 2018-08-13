@@ -2,6 +2,14 @@
   <div class="hero-body">
     <h1 class="title"><%= t('label.projects') %></h1>
     <h2 class="subtitle"><%= t('projects.subtitle') %></h2>
+    <% if params[:tag].present? %>
+      <div class="level">
+        <div class="level-left">
+          <p class="level-item has-text-grey">Tagged with&nbsp;<em><%= params[:tag] %></em></p>
+          <%= link_to 'Clear tags', projects_path, class: 'level-item' %>
+        </div>
+      </div>
+    <% end %>
   </div>
 
 </section>

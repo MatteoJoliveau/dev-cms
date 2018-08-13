@@ -46,8 +46,7 @@ class CopyDashboard < Administrate::BaseDashboard
 
   # Overwrite this method to customize how copies are displayed
   # across all pages of the admin dashboard.
-  #
-  # def display_resource(copy)
-  #   "Copy ##{copy.id}"
-  # end
+  def display_resource copy
+    copy.name
+  end
 end
