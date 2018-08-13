@@ -20,7 +20,7 @@ class ProjectDashboard < Administrate::BaseDashboard
     star:              Field::Boolean,
     published:         Field::Boolean,
     image:             Field::Image,
-    tag_list:          Field::String,
+    tag_list:          Field::String.with_options(searchable: false),
     created_at:        Field::DateTime,
     updated_at:        Field::DateTime
   }.freeze
@@ -71,6 +71,6 @@ class ProjectDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how projects are displayed
   # across all pages of the admin dashboard.
   def display_resource project
-    "Project #{project.name}"
+    project.name
   end
 end
