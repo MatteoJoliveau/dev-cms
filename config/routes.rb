@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :projects
     resources :jobs
     resources :copies
+    resources :pages
     resources :configs
     resources :admins
   end
@@ -30,4 +31,6 @@ Rails.application.routes.draw do
 
   get 'sitemap.xml' => 'sitemap#index', defaults: { format: 'xml' }
   get 'health' => 'health#index'
+
+  get '*path' => 'pages#show'
 end
