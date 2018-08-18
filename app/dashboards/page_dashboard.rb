@@ -13,7 +13,8 @@ class PageDashboard < Administrate::BaseDashboard
     id:         Field::Number,
     name:       Field::String,
     path:       Field::String,
-    content:    Field::Ckeditor,
+    content:    CodeMirrorField.with_options(mode: 'liquid'),
+    navbar:     Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -26,6 +27,7 @@ class PageDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     name
     path
+    navbar
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -33,6 +35,7 @@ class PageDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     name
     path
+    navbar
     content
     created_at
     updated_at
@@ -44,6 +47,7 @@ class PageDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     name
     path
+    navbar
     content
   ].freeze
 

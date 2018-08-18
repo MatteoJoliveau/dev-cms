@@ -46,6 +46,10 @@ class Job < ApplicationRecord
     update_attribute :published, false
   end
 
+  def to_drop
+    JobDrop.new(self)
+  end
+
   private
 
   def slug_candidates

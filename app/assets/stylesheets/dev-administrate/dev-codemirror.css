@@ -1,0 +1,18 @@
+/*
+ *= require codemirror/lib/codemirror
+ */
+
+.dev-cm-field {
+    width: 100%;
+    border: 1px solid #dfe0e1;
+    border-radius: 4px;
+    transition: border-color 250ms ease-in-out;
+}
+
+.cm-liquid-tag {
+    color: #29739b;
+}
+
+.cm-liquid-variable {
+    color: #29739b;
+}

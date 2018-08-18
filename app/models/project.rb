@@ -46,6 +46,10 @@ class Project < ApplicationRecord
     update_attribute :published, false
   end
 
+  def to_drop
+    ProjectDrop.new(self)
+  end
+
   private
 
   def should_generate_new_friendly_id?

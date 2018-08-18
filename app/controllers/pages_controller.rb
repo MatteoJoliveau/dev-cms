@@ -1,11 +1,19 @@
 # frozen_string_literal: true
 
 class PagesController < ApplicationController
-  rescue_from ActiveRecord::RecordNotFound do
-    render file: 'public/404.html', status: :not_found, layout: false
+  def show
+    @page = Page.find_by_path!(params[:path]).content
+    @template = Liquid::Template.parse(@page, error_mode: :warn)
+    @body = @template.render('projects' => projects&.map(&:to_drop), 'jobs' => jobs&.map(&:to_drop))
   end
 
-  def show
-    @page = Page.find_by_path! params[:path]
+  private
+
+  def projects
+    (@projects ||= Project.published) if @page.include? 'projects'
+  end
+
+  def jobs
+    (@jobs ||= Job.published) if @page.include? 'jobs'
   end
 end

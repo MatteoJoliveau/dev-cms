@@ -1,0 +1,13 @@
+<div class="field-unit__label">
+  <%= f.label field.attribute %>
+</div>
+<div class="field-unit__field dev-cm-field">
+  <%= f.text_area field.attribute, id: 'codemirror', class: 'dev-cm-bordered' %>
+</div>
+
+<%= javascript_include_tag 'dev-administrate/dev-codemirror' %>
+<%= stylesheet_link_tag 'dev-administrate/dev-codemirror' %>
+
+<script lang="js">
+    initCodeMirror({ mode: '<%= field.mode %>' });
+</script>
