@@ -3,7 +3,7 @@
  */
 
 .dev-cm-field {
-    width: 100%;
+    width: 65vw;
     border: 1px solid #dfe0e1;
     border-radius: 4px;
     transition: border-color 250ms ease-in-out;
