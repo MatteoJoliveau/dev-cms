@@ -4,7 +4,7 @@ DevCMS is my personal Content Management System.
 It powers my website at https://matteojoliveau.com and was
 built around my needs.
 
-It features two base concepts: Projects and Jobs.
+It features three base concepts: Projects, Jobs and Pages.
 
 ### Projects  
 Projects are basically portfolio entries. 
@@ -15,10 +15,15 @@ to, or work projects I worked on.
 Jobs are resume entries. They are positions at companies I worked at.
 They are aligned in a timeline for better presentation.
 
-### Copies
-Static pages like `/about` and `/contacts` are customized via 
-copies. These two should already be present if db seeding was run
-and can be customized in the admin panel.
+### Pages
+Static pages like `/about` and `/contacts` can be created at runtime.
+They have a name, a path and a template, which is defined using [Liquid language](https://shopify.github.io/liquid/).
+By default templates have access to all [Bulma](https://bulma.io) CSS classes and two special objects:
+- `projects`, a list of all published projects
+- `jobs`, a list of all published jobs
+
+Pages that are marked as `navbar: true` are automatically added to the navbar in the order defined
+by `navbar_order`, with `1` being the last.
 
 ### Dynamic configuration
 Some elements are configured via `Config` objects. They are key-value
