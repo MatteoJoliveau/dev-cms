@@ -10,13 +10,14 @@ class PageDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    id:         Field::Number,
-    name:       Field::String,
-    path:       Field::String,
-    content:    CodeMirrorField.with_options(mode: 'liquid'),
-    navbar:     Field::Boolean,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime
+    id:           Field::Number,
+    name:         Field::String,
+    path:         Field::String,
+    content:      CodeMirrorField.with_options(mode: 'liquid'),
+    navbar:       Field::Boolean,
+    navbar_order: Field::Number,
+    created_at:   Field::DateTime,
+    updated_at:   Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -28,6 +29,7 @@ class PageDashboard < Administrate::BaseDashboard
     name
     path
     navbar
+    navbar_order
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -36,6 +38,7 @@ class PageDashboard < Administrate::BaseDashboard
     name
     path
     navbar
+    navbar_order
     content
     created_at
     updated_at
@@ -48,12 +51,13 @@ class PageDashboard < Administrate::BaseDashboard
     name
     path
     navbar
+    navbar_order
     content
   ].freeze
 
   # Overwrite this method to customize how pages are displayed
   # across all pages of the admin dashboard.
-  def display_resource(page)
+  def display_resource page
     "#{page.name} Page"
   end
 end
