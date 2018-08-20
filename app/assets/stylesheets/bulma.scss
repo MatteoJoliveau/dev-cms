@@ -2,6 +2,11 @@
 @import "../../../node_modules/bulma/bulma.sass";
 @import "../../../node_modules/bulma-timeline/src/sass/index.sass";
 
+.is-retina {
+  height: 50%;
+  width: 50%;
+}
+
 .dev-project-tag {
   @extend .tag;
   @extend .is-success;

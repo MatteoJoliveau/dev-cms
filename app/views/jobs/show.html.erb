@@ -2,8 +2,8 @@
   <%= link_to "#{t('cta.back-to')} #{t('label.jobs')}", jobs_path %>
 
   <hr>
-  <figure class="image">
-    <%= image_tag @job.image.variant(ImageVariants::SCALED), class: 'retina-img' %>
+  <figure class="image is-retina">
+    <%= image_tag @job.image.variant(ImageVariants::SCALED) %>
   </figure>
   <h1 class="title"><%= @job.position %> <%= t('label.at') %> <%= @job.company_name %></h1>
   <h2 class="subtitle"><%= @job.short_description %></h2>
