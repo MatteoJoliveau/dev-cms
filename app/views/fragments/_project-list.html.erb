@@ -4,7 +4,7 @@
       <div class="card">
         <%= link_to project_path(project), class: 'card-image' do %>
           <figure class="image">
-            <%= image_tag project.image.variant(ImageVariants::SMALL) %>
+            <%= image_tag project.image.variant(ImageVariants::SCALED) %>
           </figure>
         <% end %>
         <header class="card-header">
