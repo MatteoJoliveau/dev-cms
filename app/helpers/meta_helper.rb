@@ -14,6 +14,6 @@ module MetaHelper
   end
 
   def meta_twitter
-    DEFAULT_META["twitter_account"]
+    DEFAULT_META[:twitter_account]
   end
 end
