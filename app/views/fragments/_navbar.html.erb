@@ -17,7 +17,7 @@
       <%= link_to t('label.projects'), projects_path, class: 'navbar-item' %>
       <%= link_to t('label.jobs'), jobs_path, class: 'navbar-item' %>
       <% navbar_pages.each do |page| %>
-        <%= link_to page.name, page.path, class: 'navbar-item' %>
+        <%= link_to page.name, page_path(page), class: 'navbar-item' %>
       <% end %>
     </div>
   </div>

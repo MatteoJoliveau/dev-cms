@@ -6,4 +6,8 @@ module ApplicationHelper
   def navbar_pages
     Page.navbar
   end
+
+  def page_path page
+    "#{root_path}#{page.path}"
+  end
 end

@@ -9,6 +9,11 @@ RSpec.describe Page, type: :model do
     it { is_expected.to have(1).error_on :name }
     it { is_expected.to have(1).error_on :path }
 
+    it 'strips initial slash if present' do
+      expect(create(:page, path: 'test').path).to eq 'test'
+      expect(create(:page, path: '/test2').path).to eq 'test2'
+    end
+
     it 'has order greater than 0 if navbar' do
       page = create(:page, navbar: true, navbar_order: 0)
       expect(page.navbar_order).to eq 1

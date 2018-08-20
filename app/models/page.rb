@@ -6,6 +6,7 @@ class Page < ApplicationRecord
   scope :navbar, -> { where(navbar: true).order(navbar_order: :desc) }
 
   before_validation do
-    update_attribute(:navbar_order, 1) if navbar && navbar_order.zero?
+    self.path = path.sub(/^\//, '') if path.present?
+    self.navbar_order = 1 if navbar && navbar_order&.zero?
   end
 end
