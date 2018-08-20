@@ -1,0 +1,8 @@
+<% @feeds.each do |feed| %>
+  <h1 class="title"><%= feed.title %></h1>
+  <ul>
+  <% feed.items.each do |item| %>
+    <li><%= item.title %></li>
+  <% end %>
+  </ul>
+<% end %>

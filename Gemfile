@@ -79,3 +79,5 @@ gem 'sentry-raven', '~> 2.7'
 gem 'acts-as-taggable-on', '~> 6.0'
 
 gem 'liquid', '~> 4.0'
+
+gem 'simple_command', '~> 0.0.9'

@@ -32,12 +32,13 @@ Rails.application.routes.draw do
   get 'sitemap.xml' => 'sitemap#index', defaults: { format: 'xml' }
   get 'health' => 'health#index'
 
+  scope :blog do
+    root 'blog#index'
+    get 'feed' => 'blog#feed'
+  end
+
   get '*path', to: 'pages#show', constraints: lambda { |req|
     # This constraint is needed because otherwise active_storage routes are catched and don't work
     req.path.exclude? 'rails/active_storage'
   }
-
-  # TODO: migrate them to pages
-  get 'about' => 'home#about'
-  get 'contacts' => 'home#contacts'
 end
