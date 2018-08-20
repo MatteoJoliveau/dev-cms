@@ -18,9 +18,13 @@ They are aligned in a timeline for better presentation.
 ### Pages
 Static pages like `/about` and `/contacts` can be created at runtime.
 They have a name, a path and a template, which is defined using [Liquid language](https://shopify.github.io/liquid/).
-By default templates have access to all [Bulma](https://bulma.io) CSS classes and two special objects:
+By default templates have access to all [Bulma](https://bulma.io) CSS classes and four special objects:  
 - `projects`, a list of all published projects
 - `jobs`, a list of all published jobs
+- `copies`, a hash of all the Copy objects, where the copy name is the key and the content is the value
+(e.g. `{{ copies['About'] }} #=> <p>Lorem Ipsum</p>`). This allows to write copies with the handy editor and have them
+embedded in custom pages
+- `configs`, a hash of all the Config objects, mapped as key-value pairs (e.g. `{{ configs['footer.copyright-year'] }} #=> 2018`)
 
 Pages that are marked as `navbar: true` are automatically added to the navbar in the order defined
 by `navbar_order`, with `1` being the last.
@@ -44,7 +48,7 @@ Necessary ones will be created during seeding, but more can be added at will.
 
 Classic Rails setup.
 
-0. If using Docker, start Postgres with `docker-compose up -d`. 
+1. If using Docker, start Postgres with `docker-compose up -d`. 
 Also install dependencies by running `bundle install` and `yarn install`. 
 1. Create and seed DB with `rails db:setup` (if not using Docker) or
 `rails db:migrate db:seed` (if using Docker)
