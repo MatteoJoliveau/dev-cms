@@ -3,7 +3,7 @@
 
   <hr>
   <figure class="image">
-    <%= image_tag @job.image.variant(ImageVariants::SCALED) %>
+    <%= image_tag @job.image.variant(ImageVariants::SCALED), class: 'retina-img' %>
   </figure>
   <h1 class="title"><%= @job.position %> <%= t('label.at') %> <%= @job.company_name %></h1>
   <h2 class="subtitle"><%= @job.short_description %></h2>

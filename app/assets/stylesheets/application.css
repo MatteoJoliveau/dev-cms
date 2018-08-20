@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+ .retina-img {
+   height: 50%;
+   width: 50%;
+ }
