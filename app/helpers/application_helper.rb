@@ -10,4 +10,8 @@ module ApplicationHelper
   def page_path page
     "#{root_path}#{page.path}"
   end
+
+  def page_url page
+    "#{root_url}#{page.path}"
+  end
 end

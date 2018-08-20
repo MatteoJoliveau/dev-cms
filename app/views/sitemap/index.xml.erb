@@ -21,20 +21,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-  <url>
-    <loc><%= about_url %></loc>
-    <lastmod><%= iso_date about_last_modified %></lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc><%= contacts_url %></loc>
-    <lastmod><%= iso_date contacts_last_modified %></lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
 
-  <!--  Projects-->
+  <!--  Projects -->
   <% @projects.each do |project| %>
   <url>
     <loc><%= project_url project %></loc>
@@ -44,11 +32,21 @@
   </url>
   <% end %>
 
-  <!--  Jobs-->
+  <!--  Jobs -->
   <% @jobs.each do |job| %>
   <url>
     <loc><%= job_url job %></loc>
     <lastmod><%= iso_date job.updated_at %></lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <% end %>
+
+  <!-- Pages -->
+  <% @pages.each do |page| %>
+  <url>
+    <loc><%= page_url(page) %></loc>
+    <lastmod><%= iso_date page.updated_at %></lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -8,6 +8,7 @@ class SitemapController < ApplicationController
       format.xml do
         @projects = Project.published
         @jobs = Job.published
+        @pages = Page.published
       end
     end
   end

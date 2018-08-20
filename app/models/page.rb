@@ -19,6 +19,7 @@ class Page < ApplicationRecord
   validates :name, :path, presence: true, uniqueness: true
 
   scope :navbar, -> { where(navbar: true).order(navbar_order: :desc) }
+  scope :published, -> { all }
 
   before_validation do
     self.path = path.sub(/^\/*/, '') if path.present?

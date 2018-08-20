@@ -5,7 +5,8 @@ module SitemapHelper
     [
         project_last_modified,
         job_last_modified,
-        copy_last_modified
+        copy_last_modified,
+        page_last_modified
     ].max
   end
 
@@ -21,12 +22,8 @@ module SitemapHelper
     model_last_modified Copy
   end
 
-  def about_last_modified
-    Copy.about.updated_at
-  end
-
-  def contacts_last_modified
-    Copy.contacts.updated_at
+  def page_last_modified
+    model_last_modified Page
   end
 
   def iso_date date
