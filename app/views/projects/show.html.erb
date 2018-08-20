@@ -1,3 +1,8 @@
+<!-- Meta Section -->
+<% content_for :meta_title, meta_title(@project.name) %>
+<% content_for :meta_description, @project.short_description %>
+<% content_for :meta_image, url_for(@project.image.variant(ImageVariants::SCALED)) %>
+
 <section class="section">
   <%= link_to "#{t('cta.back-to')} #{t('label.projects')}", projects_path %>
   <hr>

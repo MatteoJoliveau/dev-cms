@@ -1,0 +1,1 @@
+DEFAULT_META = OpenStruct.new(Rails.configuration.meta.symbolize_keys)

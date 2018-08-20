@@ -1,3 +1,8 @@
+<!-- Meta Section -->
+<% content_for :meta_title, meta_title(job_title) %>
+<% content_for :meta_description, @job.short_description %>
+<% content_for :meta_image, url_for(@job.image.variant(ImageVariants::SCALED)) %>
+
 <section class="section">
   <%= link_to "#{t('cta.back-to')} #{t('label.jobs')}", jobs_path %>
 
@@ -6,7 +11,7 @@
     <%= image_tag @job.image.variant(ImageVariants::SCALED) %>
   </figure>
   <hr>
-  <h1 class="title"><%= @job.position %> <%= t('label.at') %> <%= @job.company_name %></h1>
+  <h1 class="title"><%= job_title %></h1>
   <h2 class="subtitle"><%= @job.short_description %></h2>
   <p class="has-text-grey">
     <%= @job.starting_date.strftime('%B %Y') %>

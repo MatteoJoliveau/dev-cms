@@ -1,0 +1,14 @@
+defaults: &defaults
+  meta_title: <%= ENV.fetch('DEV_META_TITLE', 'DevCMS')%>
+  meta_description: <%= ENV.fetch('DEV_META_DESCRIPTION', 'DevCMS')%>
+  meta_image: <%= ENV.fetch('DEV_META_IMAGE', 'cover.png')%>
+  twitter_account: <%= ENV['DEV_META_TWITTER'] %>
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
