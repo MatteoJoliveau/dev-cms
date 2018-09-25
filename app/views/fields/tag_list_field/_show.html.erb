@@ -1,0 +1,14 @@
+<%= sanitize field.tag_list.map { |tag| content_tag :span, tag, class: 'tag-badge' }.join %>
+
+<style>
+  .tag-badge {
+    color: white;
+    margin: 2px;
+    padding: 5px;
+    border: 2px solid;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #2677c7;
+  }
+</style>

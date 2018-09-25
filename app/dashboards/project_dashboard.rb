@@ -20,7 +20,7 @@ class ProjectDashboard < Administrate::BaseDashboard
     star:              Field::Boolean,
     published:         Field::Boolean,
     image:             Field::Image,
-    tag_list:          Field::String.with_options(searchable: false),
+    tag_list:          TagListField,
     created_at:        Field::DateTime,
     updated_at:        Field::DateTime
   }.freeze
