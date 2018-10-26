@@ -13,7 +13,5 @@ amazon:
   secret_access_key: <%= ENV['AWS_SECRET_KEY'] %>
   region: us-east-1
   bucket: <%= ENV['AWS_BUCKET'] %>
-  # remove endpoint if using actual AWS S3 service
-  endpoint: <%= ENV['AWS_ENDPOINT'] %>
   force_path_style: true
 
