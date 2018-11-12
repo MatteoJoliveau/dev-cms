@@ -1,0 +1,10 @@
+stages:
+- name: Build
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: matteojoliveau/dev-cms:latest
+      pushRemote: true
+      registry: 679286426444.dkr.ecr.eu-west-1.amazonaws.com/rancher-contabo
+timeout: 60
