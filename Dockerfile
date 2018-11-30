@@ -16,5 +16,3 @@ RUN bundle install --binstubs
 COPY . .
 
 RUN bundle exec rails assets:precompile
-
-CMD /app/docker-entrypoint.sh
