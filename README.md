@@ -1,7 +1,7 @@
 # DevCMS
 
 DevCMS is my personal Content Management System.
-It powers my website at https://matteojoliveau.com and was
+It used to power my website at https://matteojoliveau.com and was
 built around my needs.
 
 It features three base concepts: Projects, Jobs and Pages.
